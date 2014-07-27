@@ -1,0 +1,105 @@
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,skip_taskbar,skip_pager
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# fiddle with window
+use_spacer yes
+use_xft yes
+
+# Update interval in seconds
+update_interval 3
+
+# Minimum size of text area
+minimum_size 355 450
+maximum_width 355
+
+override_utf8_locale yes
+
+# Draw shades?
+draw_shades yes
+
+# Text stuff
+draw_outline yes # amplifies text if yes
+draw_borders no
+#font freesans -12
+xftfont DejaVu Sans Condensed:size=9
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 3
+
+# border margins
+border_margin 9
+
+# border width
+border_width 10
+
+# Default colors and also border colors, grey90 == #e5e5e5
+#default_color cbcbcb
+default_color FFFFFF 
+
+own_window_colour brown
+own_window_transparent yes
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 110
+gap_y 60
+
+imlib_cache_size 0
+# stuff after 'TEXT' will be formatted on screen
+
+TEXT
+#${font DejaVu Sans Condensed:size=12}${color AAAAAA}WEATHER ${font}${color 660000}${hr 1}$color${texeci 600 bash ./1b2}
+${font DejaVu Sans Condensed:size=12}${color AAAAAA}WEATHER ${font}$color${texeci 600 bash ./1b2}
+${font DejaVu Sans Condensed:size=10}${execpi 600 sed -n '1p' ./dat/messages}${font}${goto 200}${color AAAAAA}TEMP: $color${alignr}${execpi 600 sed -n '29p' ./dat/curr_cond}°F (${execpi 600 sed -n '30p' ./dat/curr_cond}°F)
+${font conkyweather:size=100}${execi 600  sed -n '27p' ./dat/curr_cond}${font}
+${voffset -130}${goto 200}${color AAAAAA}WIND: $color${alignr}${execpi 600 sed -n '31p' ./dat/curr_cond} ${execpi 600 sed -n '32p' ./dat/curr_cond}
+${goto 200}${color AAAAAA}HUM: $color${alignr}${execpi 600 sed -n '33p' ./dat/curr_cond}
+${goto 200}${color AAAAAA}DEW POINT: $color${alignr}${execpi 600 sed -n '37p' ./dat/curr_cond}°F
+${goto 200}${color AAAAAA}PR: $color${alignr}${execpi 600 sed -n '34p' ./dat/curr_cond}
+${goto 200}${color AAAAAA}VISIB: $color${alignr}${execpi 600 sed -n '38p' ./dat/curr_cond}
+${goto 200}${color AAAAAA}CLOUD COVER: $color${alignr}${execpi 600 sed -n '35p' ./dat/curr_cond}
+${goto 200}${color AAAAAA}UV INDEX: $color${alignr}${execpi 600 sed -n '36p' ./dat/curr_cond} 
+${goto 200}${color AAAAAA}S/M RISE: $color${alignr}${execpi 600 sed -n '39p' ./dat/curr_cond}/${execpi 600 sed -n '41p' ./dat/curr_cond}
+${goto 200}${color AAAAAA}S/M SET: $color${alignr}${execpi 600 sed -n '40p' ./dat/curr_cond}/${execpi 600 sed -n '42p' ./dat/curr_cond}
+#${color 660000}${hr 1}$color
+${goto 50}${font DejaVu Sans Condensed:size=10}${color AAAAAA}TODAY$color$font${goto 230}${font DejaVu Sans Condensed:size=10}${color AAAAAA}TONIGHT$color$font
+${goto 30}${font conkyweather:size=75}${execi 600  sed -n '25p' ./dat/first_days}${font}${goto 210}${voffset -75}${font conkyweather:size=75}${execi 600  sed -n '30p' ./dat/first_days}${font}
+${voffset -70}${goto 145}${execpi 600 sed -n '26p' ./dat/first_days}°F${goto 340}${execpi 600 sed -n '31p' ./dat/first_days}°F
+${goto 140}(${execpi 600 sed -n '27p' ./dat/first_days}°F)${goto 335}(${execpi 600 sed -n '32p' ./dat/first_days}°F)
+
+
+${font DejaVu Sans Condensed:size=8}${execpi 600 sed -n '2p' ./dat/messages}${goto 195}${execpi 600 sed -n '3p' ./dat/messages}$font
+Chance of Precip: ${execpi 600 sed -n '28p' ./dat/first_days}${goto 195}Chance of Precip: $color${execpi 600 sed -n '33p' ./dat/first_days}
+#${color 660000}${hr 1}$color
+${font DejaVu Sans Condensed:size=9}${goto 40}${color AAAAAA}${execpi 600 sed -n '5p' ./dat/first_days}${goto 145}${execpi 600 sed -n '10p' ./dat/first_days}${goto 270}${execpi 600 sed -n '15p' ./dat/first_days}$color${font}
+${goto 30}${font conkyweather:size=50}${execi 600  sed -n '6p' ./dat/first_days}${font}${goto 140}${voffset -50}${font conkyweather:size=50}${execi 600  sed -n '11p' ./dat/first_days}${font}${goto 260}${voffset -50}${font conkyweather:size=50}${execi 600  sed -n '16p' ./dat/first_days}${font}
+${voffset -40}${font DejaVu Sans Condensed:size=8}${goto 100}${execpi 600 sed -n '8p' ./dat/first_days}°F${goto 210}${execpi 600 sed -n '13p' ./dat/first_days}°F${goto 330}${execpi 600 sed -n '18p' ./dat/first_days}°F
+${goto 100}${execpi 600 sed -n '9p' ./dat/first_days}°F${goto 210}${execpi 600 sed -n '14p' ./dat/first_days}°F${goto 330}${execpi 600 sed -n '19p' ./dat/first_days}°F
+
+${execpi 600 sed -n '4p' ./dat/messages}${goto 135}${execpi 600 sed -n '5p' ./dat/messages}${goto 255}${execpi 600 sed -n '6p' ./dat/messages}
+
+${font DejaVu Sans Condensed:size=9}${goto 40}${color AAAAAA}${execpi 600 sed -n '20p' ./dat/first_days}${goto 145}${execpi 600 sed -n '1p' ./dat/last_days}${goto 270}${execpi 600 sed -n '6p' ./dat/last_days}$color${font}
+${goto 30}${font conkyweather:size=50}${execi 600  sed -n '21p' ./dat/first_days}${font}${goto 140}${voffset -50}${font conkyweather:size=50}${execi 600  sed -n '2p' ./dat/last_days}${font}${goto 260}${voffset -50}${font conkyweather:size=50}${execi 600  sed -n '7p' ./dat/last_days}${font}
+${voffset -40}${font DejaVu Sans Condensed:size=8}${goto 100}${execpi 600 sed -n '23p' ./dat/first_days}°F${goto 210}${execpi 600 sed -n '4p' ./dat/last_days}°F${goto 330}${execpi 600 sed -n '9p' ./dat/last_days}°F
+${font DejaVu Sans Condensed:size=8}${goto 100}${execpi 600 sed -n '24p' ./dat/first_days}°F${goto 210}${execpi 600 sed -n '5p' ./dat/last_days}°F${goto 330}${execpi 600 sed -n '10p' ./dat/last_days}°F
+
+${execpi 600 sed -n '7p' ./dat/messages}${goto 135}${execpi 600 sed -n '8p' ./dat/messages}${goto 255}${execpi 600 sed -n '9p' ./dat/messages}
+
+${font DejaVu Sans Condensed:size=9}${goto 40}${color AAAAAA}${execpi 600 sed -n '11p' ./dat/last_days}${goto 145}${execpi 600 sed -n '16p' ./dat/last_days}${goto 270}${execpi 600 sed -n '21p' ./dat/last_days}$color${font}
+${goto 30}${font conkyweather:size=50}${execi 600  sed -n '12p' ./dat/last_days}${font}${goto 140}${voffset -50}${font conkyweather:size=50}${execi 600  sed -n '17p' ./dat/last_days}${font}${goto 260}${voffset -50}${font conkyweather:size=50}${execi 600  sed -n '22p' ./dat/last_days}${font}
+${voffset -40}${font DejaVu Sans Condensed:size=8}${goto 100}${execpi 600 sed -n '14p' ./dat/last_days}°F${goto 210}${execpi 600 sed -n '19p' ./dat/last_days}°F${goto 330}${execpi 600 sed -n '24p' ./dat/last_days}°F
+${font DejaVu Sans Condensed:size=8}${goto 100}${execpi 600 sed -n '15p' ./dat/last_days}°F${goto 210}${execpi 600 sed -n '20p' ./dat/last_days}°F${goto 330}${execpi 600 sed -n '25p' ./dat/last_days}°F
+
+${execpi 600 sed -n '10p' ./dat/messages}${goto 135}${execpi 600 sed -n '11p' ./dat/messages}${goto 255}${execpi 600 sed -n '12p' ./dat/messages}

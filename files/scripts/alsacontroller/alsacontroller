@@ -1,0 +1,117 @@
+#!/bin/perl
+################################################################################
+#
+# alsacontroller
+# Julian Vasilkoski
+# 12/28/2013
+#
+# This script is used to select a default card and eevice for ALSA by
+# creating a .asoundrc file and restarting ALSA.
+#
+################################################################################
+
+use strict;
+use warnings;
+use feature 'say';
+use Getopt::Long;
+use Carp;
+
+my $FILE_CARDS    = '/proc/asound/cards';
+my $FILE_ASOUNDRC = '/home/julian/.asoundrc';
+my %CARDS_IDS;
+my %IDS_CARDS;
+my %IDS_DEVICES;
+my $optLIST;
+my $optHELP;
+my $optCARD   = -1;
+my $optDEVICE = -1;
+
+
+GetOptions('help' => \$optHELP, 'l' => \$optLIST, 'card=s' => \$optCARD, 'device=i' => \$optDEVICE);
+$optCARD   = uc($optCARD);
+$optDEVICE = uc($optDEVICE);
+
+
+&GetCards();
+if ($optHELP or (!$optLIST and $optCARD eq -1)) {
+    &USAGE();
+    exit;
+}
+
+if ($optLIST) {
+    &ListDevices();
+    exit;
+} elsif ($optCARD) {
+    &CreateAsoundRCFile();
+}
+
+
+#--------------------------------------------------------------------------------
+sub GetCards{ 
+#--------------------------------------------------------------------------------
+    my $ret = `aplay -l`;
+    my @lines = split("\n", $ret);
+    foreach (@lines) {
+        next unless $_ =~ /card.*device/;
+        if ($_ =~ /card (\d+)\: \b(.*)\b \[.*device (\d+)/) {
+            $CARDS_IDS{uc($2)} = $1;
+            $IDS_CARDS{$1} = uc($2);
+            $IDS_DEVICES{$1}->{$3} = 1;
+        }
+    }
+}
+#--------------------------------------------------------------------------------
+sub ListDevices { 
+#--------------------------------------------------------------------------------
+    foreach my $cardID (sort keys %IDS_DEVICES) {
+        my $cardNAME = $IDS_CARDS{$cardID};
+        foreach my $device (sort keys $IDS_DEVICES{$cardID}) {
+            say "CARD: $cardID $cardNAME DEVICE: $device";       
+        }
+    }
+}
+#--------------------------------------------------------------------------------
+sub CreateAsoundRCFile{ 
+#--------------------------------------------------------------------------------
+    my $CARD_ID;
+    my $DEVICE_ID;
+
+    if (exists $CARDS_IDS{$optCARD}) {
+        $CARD_ID = $CARDS_IDS{$optCARD};
+    } elsif (exists $IDS_CARDS{$optCARD}){
+        $CARD_ID = $optCARD;
+    } else {
+        croak "Invalid card ID: $CARD_ID\n";
+    }
+
+    if ($optDEVICE) {
+        if (exists $IDS_DEVICES{$CARD_ID}->{$optDEVICE}) {
+            $DEVICE_ID = $optDEVICE;
+        } else {
+            croak "Invalid card/device combo: $CARD_ID, $optDEVICE\n";
+        }
+    } else {
+        $DEVICE_ID = (sort(keys($IDS_DEVICES{$CARD_ID})))[0];
+    }
+
+    say "$CARD_ID, $DEVICE_ID";
+
+    open my $RC_FH, ">$FILE_ASOUNDRC" or croak "Can't open $FILE_ASOUNDRC";
+    print $RC_FH "defaults.pcm.card $CARD_ID\n";
+    print $RC_FH "defaults.pcm.device $DEVICE_ID\n";
+    print $RC_FH "defaults.ctl.card $CARD_ID\n";
+    close $RC_FH;
+
+    #my $err = system('alsactl restore');
+    my $err = `alsactl restore`;
+}
+#--------------------------------------------------------------------------------
+sub USAGE{ 
+#--------------------------------------------------------------------------------
+    my $USAGE = <<HEREDOC;
+    -l:      List all cards, card names, and devices
+    -card:   Select a card to make default.
+    -device: Select the device to make default. If omitted, the lowest available device for the card is selected. 
+HEREDOC
+    say $USAGE;
+}

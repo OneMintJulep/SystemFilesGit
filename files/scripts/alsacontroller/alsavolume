@@ -1,0 +1,54 @@
+#!/bin/perl
+################################################################################
+#
+# alsavolume
+# Julian Vasilkoski
+# 1/24/2013
+#
+# This script is meant to give volume control via calls to amixer.
+# Its main motivation is to be bale to bind the keyboard media 
+# buttons to this script for volume control. 
+# 
+################################################################################
+use strict;
+use warnings;
+use Getopt::Long;
+
+
+#~~~~~~~~~~~#
+# CONSTANTS #
+#~~~~~~~~~~~#
+my $VOL_STEP    = 5;
+my $VOL_CONTROL = 'PCM';
+
+
+#~~~~~~#
+# MAIN #
+#~~~~~~#
+my $optINCREASE;
+my $optDECREASE;
+my $optMUTE;
+GetOptions('increase' => \$optINCREASE, 'decrease' => \$optDECREASE, 'mute' => \$optMUTE);	
+
+my $newVOLUME GetVolume();
+if ($optINCREASE) {
+	$newVOLUME += $VOL_STEP;
+	$newVOLUME = $newVOLUME > 100 ? 100 : $newVOLUME;
+} elsif ($optDECREASE) {
+	$newVOLUME -= $VOL_STEP;
+	$newVOLUME = $newVOLUME < 0 ? 0 : $newVOLUME;
+} elsif ($optMUTE) {
+	$newVOLUME = 0;
+} else {
+	HELP();
+}
+
+
+
+#--------------------------------------------------------------------------------
+sub GetVolume {
+#--------------------------------------------------------------------------------
+	my $getSTRING = `amixer get $VOL_CONTROL`;	
+	my $curVOLUME = $1 if $getSTRING =~ m/\[(\d*)\%]/;
+	print $curVolume;
+}

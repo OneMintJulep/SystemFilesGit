@@ -1,1 +1,15 @@
-/home/julian/.xbindkeysrc
+#Increase Volume
+"amixer set PCM 5%+"
+	XF86AudioRaiseVolume
+
+#Decrease Volume
+"amixer set PCM 5%-"
+	XF86AudioLowerVolume
+
+#Mute Volume
+"amixer set PCM 0%"
+	XF86AudioMute
+
+#Launch qalculate-gtk
+"qalculate-gtk"
+	XF86Calculator

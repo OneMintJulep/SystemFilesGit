@@ -1,1 +1,65 @@
-/home/julian/.config/.Xresources
+!------------------------------------------------------------
+! URXVT
+!------------------------------------------------------------
+URxvt*.geometry:        106x35
+URxvt*.depth:           32
+URxvt*.buffered:        false
+URxvt*.scrollBar:       false
+URxvt*.skipScroll:      False
+URxvt*.scrollTtyOutput: False
+URxvt*.lineSpace:       1
+URxvt*.cursorBlink:     True
+URxvt*.pointerBlank:    True
+URxvt*.url-launcher:    firefox
+URxvt*.perl-ext:    
+URxvt*.perl-ext-common:    
+
+!---Colors
+URxvt*.background:   rgba:0000/0000/0000/eeee
+URxvt*.foreground:   rgba:ffff/ffff/ffff/ffff
+
+!---Font
+!URxvt.font:            -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso8859-8
+!URxvt.font:            terminus
+!URxvt.font:            xft:Inconsolata:style=Regular:size=11
+!URxvt.font:            xft:DejaVu Sans Mono:style=book:size=10
+
+URxvt.font:            xft:DejaVu Sans Mono for Powerline:style=book:size=10
+URxvt.boldFont:        xft:DejaVu Sans Mono Bold for Powerline:style=book:size=10
+URxvt.boldItalicFont:  xft:DejaVu Sans Mono Bold Oblique for Powerline:style=book:size=10
+URxvt.italicFont:      xft:DejaVu Sans Mono Oblique for Powerline:style=book:size=10
+
+
+!------------------------------------------------------------
+! Xft
+!------------------------------------------------------------
+Xft*.autohint:		0
+Xft*.lcdfilter:		lcddefault
+Xft*.hintstyle:		hintfull
+Xft*.hinting:		1
+Xft*.antialias:		1
+Xft*.rgba:          rgb
+
+
+!------------------------------------------------------------
+! XTerm
+!------------------------------------------------------------
+xterm*faceName:     xft:DejaVu Sans Mono for Powerline:style=book:size=10
+xterm*foreground:   rgb:FF/FF/FF
+xterm*background:   rgb:00/00/00
+xterm*geometry:     119x28
+
+
+!------------------------------------------------------------
+! XCursor 
+!------------------------------------------------------------
+Xcursor.theme: Eclipse
+
+
+!------------------------------------------------------------
+! MAN PAGE COLOR 
+!------------------------------------------------------------
+!*VT100.colorBDMode:	true
+!*VT100.colorBD:		red
+!*VT100.colorULMode:	true
+!*VT100.colorUL:		cyan

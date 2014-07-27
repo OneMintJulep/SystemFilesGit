@@ -1,0 +1,4 @@
+#!/bin/bash
+
+~/workspace/scripts/FontPreview/FontPreview.pl
+display ~/workspace/scripts/FontPreview/dat/FontPreview.png

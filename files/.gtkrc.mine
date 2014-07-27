@@ -1,1 +1,2 @@
-/home/julian/.gtkrc.mine
+gtk-theme-name = "Numix"
+gtk-icon-theme-name = "Numix-Circle"

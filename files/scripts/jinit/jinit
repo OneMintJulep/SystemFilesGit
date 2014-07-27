@@ -1,0 +1,54 @@
+#!/bin/bash
+################################################################################
+#
+#   jinit
+#   Julian Vasilkoski
+#   11/24/2013
+#   
+#   Custom initialization script. Ran manually.
+#
+################################################################################
+
+#~~~~~~~~~~~~#
+# COMPOSITOR #
+#~~~~~~~~~~~~#
+#--- Causes urxvt glitches/slowness
+compton --config ~/.config/compton/compton.conf -b
+
+#~~~~~~~#
+# AUDIO #
+#~~~~~~~#
+alsacontroller -card Nvidia -device 7
+amixer set PCM 92%						# Set the volume to 92% by default
+
+#~~~~~~~~~~~#
+# CLIPBOARD #
+#~~~~~~~~~~~#
+if [ "$(pidof clipit)" ]
+then 
+	echo "clipit already running"
+else
+	echo "Launching clipit"
+	clipit &
+fi
+
+#~~~~~~~~~~~~#
+# X SETTINGS #
+#~~~~~~~~~~~~#
+xset dpms 1800 1800 1800	# Power off the screen after half an hour.
+xset s off					# Disable screen blanking.
+xset mouse 3/2 4			# Set the mouse acceleration and threshold.
+xbindkeys					# Allow keyboard key binding.
+
+#~~~~~~~#
+# CONKY #
+#~~~~~~~#
+~/.config/conky/conkyrings/startConky_conkyrings.sh &
+~/.config/conky/accuweather/1b2_accuweather_conkyweather_font/startConky_accuweather.sh &
+
+
+#~~~~~~~~~~#
+# REDSHIFT #
+#~~~~~~~~~~#
+redshift-gtk &
+

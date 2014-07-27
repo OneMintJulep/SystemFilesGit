@@ -1,0 +1,394 @@
+# -- Conky settings -- #
+background no
+update_interval 3
+ 
+cpu_avg_samples 2
+net_avg_samples 2
+ 
+override_utf8_locale yes
+ 
+double_buffer yes
+no_buffers yes
+ 
+text_buffer_size 2048
+imlib_cache_size 0
+ 
+# -- Window specifications -- #
+ 
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_argb_visual true		#JV
+own_window_argb_value 0			#JV
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+ 
+border_inner_margin 0
+border_outer_margin 0
+ 
+minimum_size 120 150
+maximum_width 120
+ 
+alignment tr
+gap_x 437
+gap_y 30
+ 
+# -- Graphics settings -- #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+ 
+# -- Text settings -- #
+use_xft yes
+xftfont Santana:size=10
+xftalpha 0.8
+ 
+uppercase no
+ 
+default_color FFFFFF
+ 
+TEXT
+#${font Santana:size 12}CPU ${alignr}$cpu%${font}
+${font AkrutiTml1:size 12}CPU ${alignr}$cpu%${font}
+Processes: ${alignr}${running_processes}/${processes}
+
+${font Norasi:size 12} Norasi
+${font AkrutiTml1:size 12} AkrutiTml1
+${font Tlwg Typo:size 12} Tlwg Typo
+${font padmaa,padmmaa:size 12} padmaa,padmmaa
+${font DejaVu Serif,DejaVu Serif Condensed:size 12} DejaVu Serif,DejaVu Serif Condensed
+${font Ekushey Lal Sabuj Normal:size 12} Ekushey Lal Sabuj Normal
+${font It wasn't me:size 12} It wasn't me
+${font AkrutiTml2:size 12} AkrutiTml2
+${font Likhan:size 12} Likhan
+${font Umpush:size 12} Umpush
+${font Khmer OS Battambang:size 12} Khmer OS Battambang
+${font Marked Fool:size 12} Marked Fool
+${font FreeMono:size 12} FreeMono
+${font Linux Libertine Display G:size 12} Linux Libertine Display G
+${font Linux Biolinum G:size 12} Linux Biolinum G
+${font GentiumAlt:size 12} GentiumAlt
+${font Verdana:size 12} Verdana
+${font GurbaniBoliLite:size 12} GurbaniBoliLite
+${font Luxi Mono:size 12} Luxi Mono
+${font GurbaniBoliLite:size 12} GurbaniBoliLite
+${font Baekmuk Headline,백묵 헤드라인:size 12} Baekmuk Headline,백묵 헤드라인
+${font Linux Libertine:size 12} Linux Libertine
+${font Waree:size 12} Waree
+${font AR PL New Kai ExtB,文鼎ＰＬ新中楷 ExtB:size 12} AR PL New Kai ExtB,文鼎ＰＬ新中楷 ExtB
+${font DejaVu Sans,DejaVu Sans Condensed:size 12} DejaVu Sans,DejaVu Sans Condensed
+${font Kinnari:size 12} Kinnari
+${font Ekushey Sornaly:size 12} Ekushey Sornaly
+${font DejaVu Sans:size 12} DejaVu Sans
+${font Dustismo:size 12} Dustismo
+${font Sazanami Mincho,さざなみ明朝:size 12} Sazanami Mincho,さざなみ明朝
+${font TSCu_Paranar:size 12} TSCu_Paranar
+${font Khmer OS Content:size 12} Khmer OS Content
+${font Bitstream Vera Serif:size 12} Bitstream Vera Serif
+${font Comic Sans MS:size 12} Comic Sans MS
+${font AkrutiTml1:size 12} AkrutiTml1
+${font Liberation Sans:size 12} Liberation Sans
+${font Linux Libertine Mono:size 12} Linux Libertine Mono
+${font Luxi Serif:size 12} Luxi Serif
+${font Junicode:size 12} Junicode
+${font Verdana:size 12} Verdana
+${font Tlwg Typist:size 12} Tlwg Typist
+${font Ubuntu,Ubuntu Light:size 12} Ubuntu,Ubuntu Light
+${font Gargi\-1.2b,Gargi,smita,edio:size 12} Gargi\-1.2b,Gargi,smita,edio
+${font Ekushey Bangla:size 12} Ekushey Bangla
+${font Linux Biolinum Keyboard:size 12} Linux Biolinum Keyboard
+${font Luxi Serif:size 12} Luxi Serif
+${font Baekmuk Batang,백묵 바탕:size 12} Baekmuk Batang,백묵 바탕
+${font Garuda:size 12} Garuda
+${font Ubuntu:size 12} Ubuntu
+${font Ubuntu Mono:size 12} Ubuntu Mono
+${font Bitstream Vera Sans Mono:size 12} Bitstream Vera Sans Mono
+${font Symbola:size 12} Symbola
+${font AkrutiTml2:size 12} AkrutiTml2
+${font Ekushey Punarbhaba:size 12} Ekushey Punarbhaba
+${font Kinnari:size 12} Kinnari
+${font Luxi Sans:size 12} Luxi Sans
+${font padmaa,padmmaa:size 12} padmaa,padmmaa
+${font Droid Sans Georgian:size 12} Droid Sans Georgian
+${font DejaVu Serif,DejaVu Serif Condensed:size 12} DejaVu Serif,DejaVu Serif Condensed
+${font Liberation Mono:size 12} Liberation Mono
+${font Norasi:size 12} Norasi
+${font Sagar:size 12} Sagar
+${font Linux Libertine G:size 12} Linux Libertine G
+${font Ekushey Lal Sabuj:size 12} Ekushey Lal Sabuj
+${font Sawasdee:size 12} Sawasdee
+${font Ekushey Amar Desh:size 12} Ekushey Amar Desh
+${font Loma:size 12} Loma
+${font Droid Sans Mono:size 12} Droid Sans Mono
+${font Trebuchet MS:size 12} Trebuchet MS
+${font DejaVu Serif:size 12} DejaVu Serif
+${font Liberation Sans:size 12} Liberation Sans
+${font Droid Sans Japanese:size 12} Droid Sans Japanese
+${font Times New Roman:size 12} Times New Roman
+${font Ekushey Lalsalu:size 12} Ekushey Lalsalu
+${font Luxi Mono:size 12} Luxi Mono
+${font Bitstream Vera Serif:size 12} Bitstream Vera Serif
+${font Ubuntu:size 12} Ubuntu
+${font DejaVu Sans Mono:size 12} DejaVu Sans Mono
+${font Ekushey Bangla:size 12} Ekushey Bangla
+${font TlwgTypewriter:size 12} TlwgTypewriter
+${font Tibetan Machine Uni:size 12} Tibetan Machine Uni
+${font Ekushey Amar Bangla:size 12} Ekushey Amar Bangla
+${font Courier New:size 12} Courier New
+${font Liberation Mono:size 12} Liberation Mono
+${font Arial:size 12} Arial
+${font Luxi Sans:size 12} Luxi Sans
+${font Ekushey Shimanto:size 12} Ekushey Shimanto
+${font FreeSans:size 12} FreeSans
+${font Georgia:size 12} Georgia
+${font Rupali:size 12} Rupali
+${font Umpush:size 12} Umpush
+${font Trebuchet MS:size 12} Trebuchet MS
+${font Umpush:size 12} Umpush
+${font Droid Sans Fallback:size 12} Droid Sans Fallback
+${font TlwgTypewriter:size 12} TlwgTypewriter
+${font DejaVu Serif:size 12} DejaVu Serif
+${font FreeSerif:size 12} FreeSerif
+${font FreeMono:size 12} FreeMono
+${font Tlwg Typo:size 12} Tlwg Typo
+${font Dustismo Roman:size 12} Dustismo Roman
+${font Mukti Narrow,à¦®à§à¦•à§à¦¤à¦¿:size 12} Mukti Narrow,à¦®à§à¦•à§à¦¤à¦¿
+${font Webdings:size 12} Webdings
+${font Khmer OS Muol:size 12} Khmer OS Muol
+${font Dustismo Roman:size 12} Dustismo Roman
+${font Droid Sans:size 12} Droid Sans
+${font Sawasdee:size 12} Sawasdee
+${font Khmer OS Muol Pali:size 12} Khmer OS Muol Pali
+${font Linux Libertine:size 12} Linux Libertine
+${font Droid Serif:size 12} Droid Serif
+${font SolaimanLipi:size 12} SolaimanLipi
+${font Khmer OS:size 12} Khmer OS
+${font Khmer OS Freehand:size 12} Khmer OS Freehand
+${font Umpush:size 12} Umpush
+${font FreeSans:size 12} FreeSans
+${font Droid Sans:size 12} Droid Sans
+${font Ekushey Kolom:size 12} Ekushey Kolom
+${font Comic Sans MS:size 12} Comic Sans MS
+${font Gentium:size 12} Gentium
+${font Pothana2000:size 12} Pothana2000
+${font Khmer OS Siemreap:size 12} Khmer OS Siemreap
+${font Bitstream Vera Sans Mono:size 12} Bitstream Vera Sans Mono
+${font Ubuntu,Ubuntu Light:size 12} Ubuntu,Ubuntu Light
+${font Liberation Sans:size 12} Liberation Sans
+${font Arial Black:size 12} Arial Black
+${font Luxi Sans:size 12} Luxi Sans
+${font Bitstream Vera Sans:size 12} Bitstream Vera Sans
+${font Courier New:size 12} Courier New
+${font Balker:size 12} Balker
+${font Linux Biolinum:size 12} Linux Biolinum
+${font Droid Sans Hebrew:size 12} Droid Sans Hebrew
+${font Loma:size 12} Loma
+${font Droid Sans Arabic:size 12} Droid Sans Arabic
+${font Garuda:size 12} Garuda
+${font TlwgMono:size 12} TlwgMono
+${font Liberation Serif:size 12} Liberation Serif
+${font Ekushey 16 December:size 12} Ekushey 16 December
+${font Andale Mono:size 12} Andale Mono
+${font AR PL New Kai,文鼎ＰＬ新中楷:size 12} AR PL New Kai,文鼎ＰＬ新中楷
+${font Droid Serif:size 12} Droid Serif
+${font Purisa:size 12} Purisa
+${font Junkyard:size 12} Junkyard
+${font Loma:size 12} Loma
+${font Ekushey Lal Sabuj:size 12} Ekushey Lal Sabuj
+${font Luxi Serif:size 12} Luxi Serif
+${font Tlwg Typo:size 12} Tlwg Typo
+${font Droid Naskh Shift Alt:size 12} Droid Naskh Shift Alt
+${font Droid Sans Tamil:size 12} Droid Sans Tamil
+${font Droid Arabic Kufi:size 12} Droid Arabic Kufi
+${font TlwgMono:size 12} TlwgMono
+${font Ekushey Mukto:size 12} Ekushey Mukto
+${font Garuda:size 12} Garuda
+${font Droid Arabic Naskh:size 12} Droid Arabic Naskh
+${font Droid Sans Armenian:size 12} Droid Sans Armenian
+${font Bitstream Vera Sans:size 12} Bitstream Vera Sans
+${font DejaVu Serif,DejaVu Serif Condensed:size 12} DejaVu Serif,DejaVu Serif Condensed
+${font Sazanami Gothic,さざなみゴシック:size 12} Sazanami Gothic,さざなみゴシック
+${font Ekushey Sumon:size 12} Ekushey Sumon
+${font Umpush:size 12} Umpush
+${font FreeSerif:size 12} FreeSerif
+${font TAMu_Kadambri:size 12} TAMu_Kadambri
+${font AkrutiMal1:size 12} AkrutiMal1
+${font DejaVu Sans,DejaVu Sans Condensed:size 12} DejaVu Sans,DejaVu Sans Condensed
+${font DejaVu Serif:size 12} DejaVu Serif
+${font Ubuntu:size 12} Ubuntu
+${font SolaimanLipi:size 12} SolaimanLipi
+${font Norasi:size 12} Norasi
+${font Arial:size 12} Arial
+${font Wargames:size 12} Wargames
+${font TAMu_Kalyani:size 12} TAMu_Kalyani
+${font Kinnari:size 12} Kinnari
+${font Liberation Mono:size 12} Liberation Mono
+${font Bitstream Vera Sans Mono:size 12} Bitstream Vera Sans Mono
+${font Loma:size 12} Loma
+${font Georgia:size 12} Georgia
+${font DejaVu Serif,DejaVu Serif Condensed:size 12} DejaVu Serif,DejaVu Serif Condensed
+${font AkrutiMal2:size 12} AkrutiMal2
+${font Droid Serif:size 12} Droid Serif
+${font Ubuntu Mono:size 12} Ubuntu Mono
+${font DejaVu Sans Mono:size 12} DejaVu Sans Mono
+${font HanaMinB,花園明朝B:size 12} HanaMinB,花園明朝B
+${font Norasi:size 12} Norasi
+${font Ekushey Lal Sabuj Normal:size 12} Ekushey Lal Sabuj Normal
+${font Ekushey Amar Bangla:size 12} Ekushey Amar Bangla
+${font Norasi:size 12} Norasi
+${font El Abogado Loco:size 12} El Abogado Loco
+${font Droid Sans Tamil:size 12} Droid Sans Tamil
+${font HanaMinA,花園明朝A:size 12} HanaMinA,花園明朝A
+${font Kinnari:size 12} Kinnari
+${font DejaVu Sans,DejaVu Sans Condensed:size 12} DejaVu Sans,DejaVu Sans Condensed
+${font Ubuntu Condensed:size 12} Ubuntu Condensed
+${font Linux Libertine Initials:size 12} Linux Libertine Initials
+${font Ubuntu:size 12} Ubuntu
+${font Liberation Serif:size 12} Liberation Serif
+${font Ekushey Lalsalu:size 12} Ekushey Lalsalu
+${font Luxi Mono:size 12} Luxi Mono
+${font TlwgMono:size 12} TlwgMono
+${font Arial:size 12} Arial
+${font malayalam:size 12} malayalam
+${font Gentium:size 12} Gentium
+${font FreeMono:size 12} FreeMono
+${font Times New Roman:size 12} Times New Roman
+${font Times New Roman:size 12} Times New Roman
+${font Dustismo:size 12} Dustismo
+${font Linux Libertine:size 12} Linux Libertine
+${font progenisis:size 12} progenisis
+${font Khmer OS Muol Light:size 12} Khmer OS Muol Light
+${font Ubuntu Mono:size 12} Ubuntu Mono
+${font TSCu_Comic:size 12} TSCu_Comic
+${font Ekushey Sumit:size 12} Ekushey Sumit
+${font Droid Arabic Naskh:size 12} Droid Arabic Naskh
+${font Linux Libertine:size 12} Linux Libertine
+${font Ekushey Bangla Kolom:size 12} Ekushey Bangla Kolom
+${font Liberation Sans:size 12} Liberation Sans
+${font Domestic Manners:size 12} Domestic Manners
+${font Droid Sans Ethiopic:size 12} Droid Sans Ethiopic
+${font AR PL New Sung ExtB,文鼎ＰＬ新宋 ExtB:size 12} AR PL New Sung ExtB,文鼎ＰＬ新宋 ExtB
+${font Tlwg Typo:size 12} Tlwg Typo
+${font Junicode:size 12} Junicode
+${font TAMu_Maduram:size 12} TAMu_Maduram
+${font Ekushey Kolom:size 12} Ekushey Kolom
+${font Mukti Narrow,মুক্তি  পাতনা:size 12} Mukti Narrow,মুক্তি  পাতনা
+${font Linux Libertine G:size 12} Linux Libertine G
+${font Ekushey Durga:size 12} Ekushey Durga
+${font Baekmuk Gulim,백묵 굴림:size 12} Baekmuk Gulim,백묵 굴림
+${font Tlwg Typist:size 12} Tlwg Typist
+${font Ekushey Ghorautra:size 12} Ekushey Ghorautra
+${font Waree:size 12} Waree
+${font Khmer OS System:size 12} Khmer OS System
+${font Liberation Serif:size 12} Liberation Serif
+${font Kinnari:size 12} Kinnari
+${font flatline:size 12} flatline
+${font Waree:size 12} Waree
+${font Bitstream Vera Sans Mono:size 12} Bitstream Vera Sans Mono
+${font Linux Libertine:size 12} Linux Libertine
+${font Sampige:size 12} Sampige
+${font Khmer OS Bokor:size 12} Khmer OS Bokor
+${font Times New Roman:size 12} Times New Roman
+${font Droid Sans Hebrew:size 12} Droid Sans Hebrew
+${font TlwgTypewriter:size 12} TlwgTypewriter
+${font Ekushey Buriganga:size 12} Ekushey Buriganga
+${font MPH 2B Damase,MPH 2B 大媽賊,MPH 2B ダマセ,MPH 2B 다마세,MPH 2B 大妈贼:size 12} MPH 2B Damase,MPH 2B 大媽賊,MPH 2B ダマセ,MPH 2B 다마세,MPH 2B 大妈贼
+${font Ekushey Mukto:size 12} Ekushey Mukto
+${font Linux Libertine Display:size 12} Linux Libertine Display
+${font FreeSans:size 12} FreeSans
+${font FreeSerif:size 12} FreeSerif
+${font Sawasdee:size 12} Sawasdee
+${font Ekushey Sharifa:size 12} Ekushey Sharifa
+${font Liberation Serif:size 12} Liberation Serif
+${font AkrutiMal1:size 12} AkrutiMal1
+${font Khmer OS Metal Chrieng:size 12} Khmer OS Metal Chrieng
+${font Purisa:size 12} Purisa
+${font GentiumAlt:size 12} GentiumAlt
+${font DejaVu Sans,DejaVu Sans Light:size 12} DejaVu Sans,DejaVu Sans Light
+${font Luxi Mono:size 12} Luxi Mono
+${font Ekushey Bangla Kolom:size 12} Ekushey Bangla Kolom
+${font Verdana:size 12} Verdana
+${font Droid Serif:size 12} Droid Serif
+${font Khmer OS Fasthand:size 12} Khmer OS Fasthand
+${font Ekushey Lohit:size 12} Ekushey Lohit
+${font Ekushey Mohua:size 12} Ekushey Mohua
+${font HAN NOM A:size 12} HAN NOM A
+${font Junicode:size 12} Junicode
+${font MalOtf:size 12} MalOtf
+${font Umpush:size 12} Umpush
+${font Baekmuk Dotum,백묵 돋움:size 12} Baekmuk Dotum,백묵 돋움
+${font HAN NOM B:size 12} HAN NOM B
+${font Trebuchet MS:size 12} Trebuchet MS
+${font orya:size 12} orya
+${font AkrutiMal2:size 12} AkrutiMal2
+${font Waree:size 12} Waree
+${font Luxi Sans:size 12} Luxi Sans
+${font Sawasdee:size 12} Sawasdee
+${font Ubuntu Mono:size 12} Ubuntu Mono
+${font Linux Libertine G:size 12} Linux Libertine G
+${font Tlwg Typist:size 12} Tlwg Typist
+${font Linux Biolinum:size 12} Linux Biolinum
+${font Dustismo Roman:size 12} Dustismo Roman
+${font TlwgMono:size 12} TlwgMono
+${font Droid Sans Thai:size 12} Droid Sans Thai
+${font Impact:size 12} Impact
+${font Linux Biolinum G:size 12} Linux Biolinum G
+${font TSCu_Paranar:size 12} TSCu_Paranar
+${font FreeSerif:size 12} FreeSerif
+${font Linux Biolinum G:size 12} Linux Biolinum G
+${font DejaVu Sans:size 12} DejaVu Sans
+${font Droid Arabic Kufi:size 12} Droid Arabic Kufi
+${font Linux Biolinum:size 12} Linux Biolinum
+${font Junicode:size 12} Junicode
+${font Purisa:size 12} Purisa
+${font Trebuchet MS:size 12} Trebuchet MS
+${font Courier New:size 12} Courier New
+${font Ekushey Godhuli:size 12} Ekushey Godhuli
+${font Linux Libertine G:size 12} Linux Libertine G
+${font Dustismo:size 12} Dustismo
+${font Bitstream Vera Sans:size 12} Bitstream Vera Sans
+${font DejaVu Sans Mono:size 12} DejaVu Sans Mono
+${font Georgia:size 12} Georgia
+${font Ekushey Puja:size 12} Ekushey Puja
+${font Ekushey Ghorautra:size 12} Ekushey Ghorautra
+${font Droid Sans Fallback:size 12} Droid Sans Fallback
+${font Droid Sans Fallback:size 12} Droid Sans Fallback
+${font Ekushey Durga:size 12} Ekushey Durga
+${font DejaVu Sans,DejaVu Sans Condensed:size 12} DejaVu Sans,DejaVu Sans Condensed
+${font Mukti Narrow,à¦®à§à¦•à§à¦¤à¦¿:size 12} Mukti Narrow,à¦®à§à¦•à§à¦¤à¦¿
+${font Kinnari:size 12} Kinnari
+${font Verdana:size 12} Verdana
+${font Linux Libertine G:size 12} Linux Libertine G
+${font Garuda:size 12} Garuda
+${font DejaVu Serif:size 12} DejaVu Serif
+${font Ekushey Saraswatii:size 12} Ekushey Saraswatii
+${font Droid Sans Ethiopic:size 12} Droid Sans Ethiopic
+${font Winks:size 12} Winks
+${font Droid Sans Devanagari:size 12} Droid Sans Devanagari
+${font Arial:size 12} Arial
+${font DejaVu Sans Mono:size 12} DejaVu Sans Mono
+${font FreeSans:size 12} FreeSans
+${font TSCu_Times:size 12} TSCu_Times
+${font Ekushey Azad:size 12} Ekushey Azad
+${font Norasi:size 12} Norasi
+${font Luxi Serif:size 12} Luxi Serif
+${font Courier New:size 12} Courier New
+${font Akaash:size 12} Akaash
+${font Liberation Mono:size 12} Liberation Mono
+${font Bitstream Vera Sans:size 12} Bitstream Vera Sans
+${font Ekushey Punarbhaba:size 12} Ekushey Punarbhaba
+${font Penguin Attack:size 12} Penguin Attack
+${font Dustismo:size 12} Dustismo
+${font TSCu_Paranar:size 12} TSCu_Paranar
+${font Braille:size 12} Braille
+${font Tlwg Typist:size 12} Tlwg Typist
+${font DejaVu Sans:size 12} DejaVu Sans
+${font Linux Libertine:size 12} Linux Libertine
+${font FreeMono:size 12} FreeMono
+${font Swift:size 12} Swift
+${font Georgia:size 12} Georgia
+${font DejaVu Sans:size 12} DejaVu Sans
+${font TlwgTypewriter:size 12} TlwgTypewriter
+${font Dustismo Roman:size 12} Dustismo Roman
+${font Linux Libertine G:size 12} Linux Libertine G
+${font Purisa:size 12} Purisa
